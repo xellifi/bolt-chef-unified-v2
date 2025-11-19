@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "AI-powered full-stack web development tool with reactive backend",
   "type": "module",
+  "bin": {
+    "chefshot": "./chefshot/index.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -14,7 +17,10 @@
     "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
     "electron:build": "npm run build && electron-builder",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "chefshot": "node ./chefshot/index.js",
+    "test-kitchen": "node ./test-kitchen/run.js",
+    "deploy:cloudflare": "node ./scripts/deploy-cloudflare.js"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^0.0.52",
@@ -59,7 +65,10 @@
     "tailwindcss-animate": "^1.0.7",
     "use-debounce": "^10.0.0",
     "vaul": "^0.9.0",
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.2",
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12"
   },
   "devDependencies": {
     "@electron/notarize": "^2.3.2",

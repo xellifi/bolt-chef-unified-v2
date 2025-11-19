@@ -1,0 +1,22 @@
+name = "bolt-chef-unified"
+compatibility_date = "2024-01-01"
+
+pages_build_output_dir = "dist"
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+[env.production.env]
+VITE_CONVEX_URL = "https://your-deployment.convex.cloud"
+
+[env.staging]
+vars = { ENVIRONMENT = "staging" }
+
+[env.staging.env]
+VITE_CONVEX_URL = "https://your-staging-deployment.convex.cloud"
+
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+[env.development.env]
+VITE_CONVEX_URL = "http://localhost:3210"
