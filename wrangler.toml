@@ -5,12 +5,9 @@ pages_build_output_dir = "dist"
 
 [env.production]
 vars = { ENVIRONMENT = "production" }
-
-[env.production.env]
-VITE_CONVEX_URL = "https://your-deployment.convex.cloud"
+# Leave VITE_CONVEX_URL empty for now to use localhost during build
+# VITE_CONVEX_URL will be set after Convex deployment
 
 [env.preview]
 vars = { ENVIRONMENT = "preview" }
-
-[env.preview.env]
-VITE_CONVEX_URL = "https://your-preview-deployment.convex.cloud"
+# Leave VITE_CONVEX_URL empty for now to use localhost during build
